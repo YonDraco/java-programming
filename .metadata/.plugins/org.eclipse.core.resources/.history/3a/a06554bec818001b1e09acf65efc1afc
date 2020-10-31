@@ -1,0 +1,19 @@
+package application;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class DataLogin {
+	private String username;
+	private String password;
+	private List<User> us;
+
+	public DataLogin() {
+		List<uer> studentList = new ArrayList<Student>();
+		studentList.add(new Student("639313", "Hoàng", "Nguyễn Văn"));
+		studentList.add(new Student("638811", "Ngọc", "Vũ Văn"));
+		studentList.add(new Student("620835", "Hoa", "Nguyễn Mai"));
+		studentList.add(new Student("622649", "Tuân", "Đỗ Đức"));
+		return studentList;
+	}
+}

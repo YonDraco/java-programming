@@ -1,0 +1,6 @@
+package application;
+
+public class DataLogin {
+	private String username;
+	private String password;
+}

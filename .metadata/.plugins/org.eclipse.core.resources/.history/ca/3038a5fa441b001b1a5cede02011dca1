@@ -1,0 +1,29 @@
+package core;
+
+public class Student extends Human{
+	private String class_;
+	// constructor 1
+	public Student(){}
+	// constructor 2
+	public Student(String studentCode, String fullname, String class_){
+		super();
+		this.code = studentCode;
+		this.fullname = fullname;
+		this.class_ = class_;
+	}
+	// constructor 3
+	public Student(String studentCode, String fullname, String class_, String
+	address){
+	// ??
+	}
+	// Hàm kiểm tra 2 sinh viên có là một không
+	public boolean equals(Object obj){
+	//if(?) {
+	//Student student = ?; // Ep ve kieu SinhVien
+	// Nếu mã code tương đương nhau
+	//if(?.equals(student.code)){
+	return true;
+	}
+	}return false;}
+// Phương thức get, set cho thuộc tính class_
+}

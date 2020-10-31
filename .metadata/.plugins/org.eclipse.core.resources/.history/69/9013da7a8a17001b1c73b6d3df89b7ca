@@ -1,0 +1,14 @@
+package application;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class DataLogin {
+	private String username;
+	private String password;
+	private List<User> us;
+
+	public DataLogin() {
+		dsns = new ArrayList<Nguoi>(100);
+	}
+}
