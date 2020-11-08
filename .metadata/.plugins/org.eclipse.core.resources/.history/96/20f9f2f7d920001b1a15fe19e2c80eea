@@ -1,0 +1,13 @@
+package application;
+
+import javafx.scene.control.TextField;
+
+public class RegisterController {
+	@FXML
+	TextField email;
+	@FXML
+	TextField hoten;
+	
+	@FXML
+	public void 
+}

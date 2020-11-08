@@ -7,6 +7,10 @@ public class Student extends Human {
 	public Student() {
 	}
 
+	public Student(String studentCode) {
+		this.code = studentCode;
+	}
+
 	// constructor 2
 	public Student(String studentCode, String fullname, String class_) {
 		this.code = studentCode;

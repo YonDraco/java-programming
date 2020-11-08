@@ -13,7 +13,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="404.0" prefWidth="384.0" style="-fx-background-color: #E0F2F7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="404.0" prefWidth="384.0" style="-fx-background-color: #E0F2F7;" 
+xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.LoginController">
    <children>
       <GridPane layoutX="19.0" layoutY="38.0" prefHeight="282.0" prefWidth="356.0">
         <columnConstraints>

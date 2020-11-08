@@ -8,6 +8,11 @@ public class Lecturer extends Human {
 	public Lecturer() {
 	}
 
+	public Lecturer(String lecturerCode, String fullname) {
+		this.lecturerCode = lecturerCode;
+		this.fullname = fullname;
+	}
+
 	public Lecturer(String lecturerCode, String fullname, String address) {
 		super(lecturerCode, fullname, address);
 	}

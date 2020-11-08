@@ -44,70 +44,70 @@ public class LoginController {
 	@FXML
 	private Button cancelButton;
 
-// Tạo đối tượng dịch vụ xác thực
+	// Tạo đối tượng dịch vụ xác thực
 	private AuthenticationService authService = new AuthenticationServiceImpl();
 
-// Xử lý sự kiện click nút Login
+	// Xử lý sự kiện click nút Login
 	public void onClickLogin(ActionEvent event) {
-// Nếu dữ liệu nhập vào form đã hợp lệ
+		// Xử lý nút enter
+		loginButton.setDefaultButton(true);
+		// Nếu dữ liệu nhập vào form đã hợp lệ
 		if (validateForm()) {
 			Human user;
-// Nếu trường password bị disable, User là giảng viên
-
+			// Nếu trường password bị disable, User là giảng viên
 			if (!passwordTF.isDisable()) {
-
+				// user = new Lecturer(userNameTF.getText(),);
 				user = new Lecturer(userNameTF.getText(), passwordTF.getText(), null);
 			} else {
-				user = new Student(userNameTF.getText(), passwordTF.getText(), null);
+				// user = new Student(userNameTF.getText(),);
+				user = new Student(userNameTF.getText(), "", "");
 			}
-// Nếu login thành công
+			// Nếu login thành công
 			if (authService.login(user)) {
-// Ẩn trang đăng nhập
+				// Ẩn trang đăng nhập
 				((Node) (event.getSource())).getScene().getWindow().hide();
-
-// Lấy về lựa chọn hiện tại và quy ước quyền sinh viên (role = 0), giảng viên (role = 1)
-
+				// Lấy về lựa chọn hiện tại và quy ước quyền sinh viên (role = 0), giảng viên
+				// (role = 1)
 				int role = group.getSelectedToggle().equals(studentRadio) ? 0 : 1;
-
-// truyền role và username vào trang chủ
+				// truyền role và username vào trang chủ
 				showHomeGUI(role, userNameTF.getText());
-			} else
-
-			{ // Nếu đăng nhập ko thành công, gán lỗi vào trường ẩn
+			} else { // Nếu đăng nhập ko thành công, gán lỗi vào trường ẩn
 				invalidLogin.setText("username or password is invalid!");
 			}
 		}
 	}
 
-// Xử lý sự kiện click nút Cancel
+	// Xử lý sự kiện click nút Cancel
 	public void onClickCancel(ActionEvent event) {
-// Ẩn trang đăng nhập
-		((Node) (event.getSource())).getScene().getWindow().hide();
+		// Xử lý nút enter
+		cancelButton.setCancelButton(true);
+		// Ẩn trang đăng nhập
+		passwordTF.getScene().getWindow().hide();
 	}
 
-// Xử lý sự kiện thay đổi lựa chọn loại user
+	// Xử lý sự kiện thay đổi lựa chọn loại user
 	public void radioButtonChanged() {
-// Nếu chọn loại user là sinh viên
+		// Nếu chọn loại user là sinh viên
 		if (group.getSelectedToggle().equals(studentRadio)) {
-// Vô hiệu hóa trường password
+			// Vô hiệu hóa trường password
 			passwordTF.setDisable(true);
 		} else {
-// Enable trường password
+			// Enable trường password
 			passwordTF.setDisable(false);
 		}
 	}
 
-// Kiểm chứng tính hợp lệ của các trường trong FORM
-	public boolean validateForm() {
+	// Kiểm chứng tính hợp lệ của các trường trong FORM
+	private boolean validateForm() {
 		boolean result = true;
-// Reset các nhãn messge ẩn trên form
+		// Reset các nhãn messge ẩn trên form
 		resetMessage();
-// Nếu chưa nhập trường username
+		// Nếu chưa nhập trường username
 		if ("".equals(userNameTF.getText())) {
 			userNameEmpty.setText("Username is empty!");
 			result = false;
 		}
-// Nếu trường password đang enable và chưa nhập
+		// Nếu trường password đang enable và chưa nhập
 		if ((!passwordTF.isDisabled()) && ("".equals(passwordTF.getText()))) {
 			passwordEmpty.setText("Password is empty!");
 			result = false;
@@ -115,27 +115,31 @@ public class LoginController {
 		return result;
 	}
 
-// Reset các nhãn messge ẩn trên form
+	// Reset các nhãn messge ẩn trên form
 	public void resetMessage() {
 		userNameEmpty.setText("");
 		passwordEmpty.setText("");
 		invalidLogin.setText("");
 	}
 
-// Truyền dữ liệu cho HomeController và hiển thị màn hình trang chủ
+	// Truyền dữ liệu cho HomeController và hiển thị màn hình trang chủ
 	public void showHomeGUI(int role, String userName) {
 		try {
-// Tạo FXMLLoader tương ứng HomeScene.fxml
+			// Tạo FXMLLoader tương ứng HomeScene.fxml
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HomeScene.fxml"));
-// Lấy về đối tượng root layout
+			// Lấy về đối tượng root layout
 			Parent root = (Parent) fxmlLoader.load();
-// Lấy về đối tượng HomeController từ fxmlLoader
+			// Lấy về đối tượng HomeController từ fxmlLoader
 			HomeController controller = fxmlLoader.getController();
-// Truyền dữ liệu vào đối tượng controller
-// Lớp HomeController cần khai báo thêm 2 thuộc tính role,username và phương thức get, set tương ứng
-			controller.setRole(newRole);
-			controller.setUserName();
-// Tạo Stage, Scene từ root
+			// Truyền dữ liệu vào đối tượng controller
+			// Lớp HomeController cần khai báo thêm 2 thuộc tính role,
+			// username và phương thức get, set tương ứng
+			// controller.setRole(?);
+			controller.setRole(role);
+			// controller.setUserName(?);
+			controller.setUserName(userNameTF.getText());
+
+			// Tạo Stage, Scene từ root
 			Stage homeStage = new Stage();
 			homeStage.setTitle("Home");
 			homeStage.setScene(new Scene(root));
