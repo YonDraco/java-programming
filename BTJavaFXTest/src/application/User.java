@@ -1,6 +1,5 @@
 package application;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class User {
@@ -33,13 +32,4 @@ public class User {
 		this.password = password;
 	}
 
-	private List<User> getUserList() {
-		List<User> userList = new ArrayList<User>();
-		userList.add(new User("Yon01", "123456"));
-		userList.add(new User("Yon02", "123456"));
-		userList.add(new User("Yon03", "123456"));
-		userList.add(new User("Yon04", "123456"));
-		return userList;
-
-	}
 }

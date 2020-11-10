@@ -45,7 +45,7 @@ public class LoginGUI extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeScene.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("HomeSceneDB.fxml"));
 		Pane root = loader.load();
 		Scene sc = new Scene(root);
 		primaryStage.setScene(sc);
