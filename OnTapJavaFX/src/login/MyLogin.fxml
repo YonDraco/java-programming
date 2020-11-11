@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="254.0" prefWidth="353.0" xmlns="http://javafx.com/javafx/8.0.271" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.MyController">
+<AnchorPane prefHeight="254.0" prefWidth="353.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.LoginController">
    <children>
       <VBox prefHeight="266.0" prefWidth="361.0" style="-fx-background-color: #999999;">
          <children>
@@ -60,6 +60,11 @@
                   <Insets top="30.0" />
                </VBox.margin>
             </HBox>
+            <Label fx:id="msg" prefHeight="17.0" prefWidth="149.0">
+               <VBox.margin>
+                  <Insets left="130.0" />
+               </VBox.margin>
+            </Label>
             <Button fx:id="myButton" mnemonicParsing="false" onAction="#showHomePage" style="-fx-background-color: #99FF99;" text="Sign in">
                <VBox.margin>
                   <Insets left="227.0" top="25.0" />

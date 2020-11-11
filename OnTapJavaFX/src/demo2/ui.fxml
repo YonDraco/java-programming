@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane hgap="5.0" prefHeight="400.0" prefWidth="600.0" vgap="5.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="demo2.Controller">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="430.0" minWidth="10.0" prefWidth="353.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="283.0" minWidth="10.0" prefWidth="222.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <TextArea fx:id="log" prefHeight="373.0" prefWidth="289.0" GridPane.columnIndex="1" />
+        <AnchorPane fx:id="pane" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ListView fx:id="listView" layoutX="14.0" layoutY="14.0" prefHeight="122.0" prefWidth="326.0" />
+            <Label layoutX="14.0" layoutY="148.0" text="Name" />
+            <Label layoutX="183.0" layoutY="148.0" text="Author" />
+            <Button layoutX="61.0" layoutY="143.0" mnemonicParsing="false" onAction="#nameAsc" text="Asc" />
+            <Button layoutX="115.0" layoutY="143.0" mnemonicParsing="false" onAction="#nameDesc" text="Desc" />
+            <Button layoutX="235.0" layoutY="143.0" mnemonicParsing="false" onAction="#authorAsc" text="Asc" />
+            <Button layoutX="284.0" layoutY="143.0" mnemonicParsing="false" onAction="#authorDesc" text="Desc" />
+         </children>
+        </AnchorPane>
+    </children>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+</GridPane>
+
