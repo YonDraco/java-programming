@@ -10,11 +10,11 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("MyLogin.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("formSearch.fxml"));
 
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Login");
+			primaryStage.setTitle("Search");
 			primaryStage.show();
 		} catch (
 
