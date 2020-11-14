@@ -1,6 +1,0 @@
-package application;
-
-public class User1 {
-	private String gmail;
-	private String hoten;
-}

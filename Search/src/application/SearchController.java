@@ -36,7 +36,7 @@ public class SearchController implements Initializable {
 
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-
+		// Cột hiển thị
 		idtitle.setCellValueFactory(new PropertyValueFactory<>("Title"));
 		idauthor.setCellValueFactory(new PropertyValueFactory<>("Author"));
 
@@ -71,7 +71,7 @@ public class SearchController implements Initializable {
 
 		SortedList<Books> sortedData = new SortedList<>(filteredData);
 
-		sortedData.comparatorProperty().bind(idtableview.comparatorProperty()); // Books id của
+		sortedData.comparatorProperty().bind(idtableview.comparatorProperty());
 
 		idtableview.setItems(sortedData);
 	}
