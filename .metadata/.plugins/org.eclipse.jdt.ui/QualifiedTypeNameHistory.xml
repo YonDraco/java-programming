@@ -7,8 +7,6 @@
 <fullyQualifiedTypeName name="baithuchanh3.Nguoi"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="baithuchanh3.HocSinh"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="DeKiemTraThu.Student"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="DeKiemTraThu.Person"/>
@@ -40,4 +38,9 @@
 <fullyQualifiedTypeName name="application.User"/>
 <fullyQualifiedTypeName name="application.ThongBaoController"/>
 <fullyQualifiedTypeName name="application.ListUser"/>
+<fullyQualifiedTypeName name="De1.PhanSo"/>
+<fullyQualifiedTypeName name="De2.CanBo"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="deso5.Nguoi"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>
