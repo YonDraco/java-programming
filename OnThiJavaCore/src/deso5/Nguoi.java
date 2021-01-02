@@ -1,18 +1,23 @@
 package deso5;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Nguoi {
 	private String hoTen;
-	private String ngaySinh;
+	private String ngaySinhStr;
+	private Date ngaySinh;
 	private String ngheNghiep;
 
 	public Nguoi() {
 	}
 
-	public Nguoi(String hoTen, String ngaySinh, String ngheNghiep) {
+	public Nguoi(String hoTen, String ngaySinhStr, String ngheNghiep) {
 		this.hoTen = hoTen;
-		this.ngaySinh = ngaySinh;
+		this.ngaySinhStr = ngaySinhStr;
 		this.ngheNghiep = ngheNghiep;
 	}
 
@@ -21,7 +26,7 @@ public class Nguoi {
 	}
 
 	public String getNgaySinh() {
-		return ngaySinh;
+		return ngaySinhStr;
 	}
 
 	public String getNgheNghiep() {
@@ -29,12 +34,32 @@ public class Nguoi {
 	}
 
 	public void nhapTT(Scanner sc) {
-		System.out.println("Nhập họ tên: ");
+		System.out.print("Nhập họ tên: ");
 		hoTen = sc.nextLine();
-		System.out.println("Nhập ngày sinh: ");
-		ngaySinh = sc.nextLine();
-		System.out.println("Nhập nghề nghiệp: ");
+		System.out.print("Nhập ngày sinh: ");
+		ngaySinhStr = sc.nextLine();
+		ngaySinh = stringToDate(ngaySinhStr);
+		System.out.print("Nhập nghề nghiệp: ");
 		ngheNghiep = sc.nextLine();
+	}
+
+	public Date stringToDate(String dateTimeStr) {
+		Date date = null;
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		try {
+			date = sdf.parse(ngaySinhStr);
+		} catch (Exception e) {
+			System.out.println("Sai định dạng ngày sinh");
+		}
+		return date;
+	}
+
+	@SuppressWarnings("deprecation")
+	public int getAge() {
+		LocalDate now = LocalDate.now();
+		LocalDate birthday = LocalDate.of(ngaySinh.getYear() + 1900, ngaySinh.getMonth() + 1, ngaySinh.getDate());
+		Period p = Period.between(birthday, now);
+		return (int) (p.getYears());
 	}
 
 	public void inTT() {

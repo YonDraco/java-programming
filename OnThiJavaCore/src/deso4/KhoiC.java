@@ -1,10 +1,9 @@
 package deso4;
 
-public class KhoiC extends KhoiA {
+public class KhoiC extends ThiSinh {
 	public KhoiC() {
+		super();
+		this.dsMonHoc = new MonHoc[] { ThiSinh.MonHoc.Van, ThiSinh.MonHoc.Su, ThiSinh.MonHoc.Dia };
 	}
 
-	public KhoiC(String monThi1, String monThi2, String monThi3) {
-		super(monThi1, monThi2, monThi3);
-	}
 }

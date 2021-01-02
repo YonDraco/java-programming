@@ -6,6 +6,10 @@ import java.util.Scanner;
 public class Main {
 	private ArrayList<CBGV> qlcb;
 
+	public Main() {
+		qlcb = new ArrayList<CBGV>();
+	}
+
 	public void themDanhSach(CBGV cb) {
 		qlcb.add(cb);
 	}
@@ -27,9 +31,9 @@ public class Main {
 		}
 	}
 
-	public void timKiem() {
+	public void timKiemCanBoCoLuongThucLinhLonHon(int soTien) {
 		for (CBGV cbgv : qlcb) {
-			if (cbgv.getluongThucLinh() >= 8) {
+			if (cbgv.getluongThucLinh() >= soTien) {
 				cbgv.inTT();
 			}
 		}
@@ -43,6 +47,7 @@ public class Main {
 		System.out.println("\nDanh sách cán bộ giáo viên: ");
 		qlgv.inDanhSach();
 		System.out.println("\nDanh sách cán bộ giáo viên có lương thục lĩnh >= 8 triệu: ");
-		qlgv.timKiem();
+		qlgv.timKiemCanBoCoLuongThucLinhLonHon(8000000);
+		System.exit(0);
 	}
 }

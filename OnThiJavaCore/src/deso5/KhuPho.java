@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class KhuPho {
-	private ArrayList<HoDan> hd;
+	private ArrayList<HoDan> dsHoDan;
+
+	public KhuPho() {
+		dsHoDan = new ArrayList<HoDan>();
+	}
 
 	public void themDanhSach(HoDan shd) {
-		hd.add(shd);
+		dsHoDan.add(shd);
 	}
 
 	public void nhapDanhSach(Scanner sc) {
@@ -18,18 +22,20 @@ public class KhuPho {
 		for (int i = 0; i < n; i++) {
 			shd = new HoDan();
 			shd.nhapTT(sc);
-			hd.add(shd);
+			dsHoDan.add(shd);
 		}
 	}
 
-	public void inDanhSach() {
-		for (HoDan hoDan : hd) {
-			hoDan.inTT();
+	public void inDanhSachCacHoCoNguoiMungTho80() {
+		for (HoDan hoDan : dsHoDan) {
+			if (hoDan.coNguoiMungTho80()) {
+				System.out.print(hoDan.getSoNha() + " ");
+			}
 		}
 	}
 
 	public void timKiem(String ngaySinh) {
-		for (HoDan hoDan : hd) {
+		for (HoDan hoDan : dsHoDan) {
 			if (ngaySinh.equals(hoDan.getNgaySinh())) {
 				hoDan.inTT();
 			}
@@ -41,7 +47,7 @@ public class KhuPho {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Nhập danh sách ");
 		kp.nhapDanhSach(sc);
-		System.out.println("\nDanh sách khu phố là: ");
-		kp.inDanhSach();
+		System.out.print("\nSố nhà của các hộ có người mừng thọ trên 80 tuổi là: ");
+		kp.inDanhSachCacHoCoNguoiMungTho80();
 	}
 }

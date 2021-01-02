@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class TuyenSinh {
 	private ArrayList<ThiSinh> tuyenSinh;
 
-	public TuyenSinh(int size) {
-		tuyenSinh = new ArrayList<ThiSinh>(size);
+	public TuyenSinh() {
+		tuyenSinh = new ArrayList<ThiSinh>();
 	}
 
 	public void themThiSinh(ThiSinh ts) {
@@ -16,7 +16,7 @@ public class TuyenSinh {
 
 	public void nhapDanhSach(Scanner sc) {
 		ThiSinh ts;
-		System.out.println("Nhập số lượng thí sinh: ");
+		System.out.print("Nhập số lượng thí sinh: ");
 		int n = sc.nextInt();
 		sc.nextLine();
 		for (int i = 0; i < n; i++) {
@@ -57,7 +57,7 @@ public class TuyenSinh {
 	}
 
 	public static void main(String[] args) {
-		TuyenSinh ts = new TuyenSinh(20);
+		TuyenSinh ts = new TuyenSinh();
 		Scanner sc = new Scanner(System.in);
 		ts.nhapDanhSach(sc);
 		System.out.println("\nDanh sách thí sinh: ");

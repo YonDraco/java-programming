@@ -42,7 +42,6 @@ public class Nguoi {
 	}
 
 	public void inTT() {
-		System.out.println("\nThông tin cá nhân là: \n");
 		System.out.println("Họ tên: " + hoTen);
 		System.out.println("Ngày sinh: " + ngaySinh);
 		System.out.println("Quê quán: " + queQuan);

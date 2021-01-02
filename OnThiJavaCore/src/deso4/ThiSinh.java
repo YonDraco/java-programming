@@ -1,14 +1,43 @@
 package deso4;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ThiSinh {
+	public enum MonHoc {
+		Toan, Ly, Hoa, Sinh, Van, Su, Dia
+	};
+
+	public MonHoc[] dsMonHoc = new MonHoc[3];
+
 	private String SBD;
 	private String hoTen;
 	private String diaChi;
 	private String dienUuTien;
 
 	public ThiSinh() {
+	}
+
+	public String enum2String(MonHoc monHoc) {
+		switch (monHoc) {
+		case Toan:
+			return "Toán";
+		case Ly:
+			return "Lý";
+		case Hoa:
+			return "Hoá";
+		case Sinh:
+			return "Sinh";
+		case Van:
+			return "Văn";
+		case Su:
+			return "Sử";
+		case Dia:
+			return "Địa";
+		}
+
+		return null;
 	}
 
 	public ThiSinh(String SBD, String hoTen, String diaChi, String dienUuTien) {
@@ -35,13 +64,13 @@ public class ThiSinh {
 	}
 
 	public void nhapTT(Scanner sc) {
-		System.out.println("Nhập số báo danh: ");
+		System.out.print("Nhập số báo danh: ");
 		SBD = sc.nextLine();
-		System.out.println("Nhập họ tên: ");
+		System.out.print("Nhập họ tên: ");
 		hoTen = sc.nextLine();
-		System.out.println("Nhập địa chỉ: ");
+		System.out.print("Nhập địa chỉ: ");
 		diaChi = sc.nextLine();
-		System.out.println("Nhập diện ưu tiên: ");
+		System.out.print("Nhập diện ưu tiên: ");
 		dienUuTien = sc.nextLine();
 	}
 
@@ -50,5 +79,17 @@ public class ThiSinh {
 		System.out.println("Họ tên: " + hoTen);
 		System.out.println("Địa chỉ: " + diaChi);
 		System.out.println("Diện ưu tiên: " + dienUuTien);
+
+		// In ra các môn học
+		// dsmh = {Toán, Lý, Hoá}
+		// String.join(", ", dsmh)
+		// Ouput: "Toán, Lý, Hoá"
+		List<String> dsmhStr = new ArrayList<String>();
+		System.out.print("Môn học: ");
+		for (MonHoc mh : this.dsMonHoc) {
+			dsmhStr.add(this.enum2String(mh));
+		}
+		String result = String.join(", ", dsmhStr);
+		System.out.println(result);
 	}
 }

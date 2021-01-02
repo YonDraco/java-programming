@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class HoDan extends Nguoi {
-	private ArrayList<Nguoi> stv;
+	private ArrayList<Nguoi> dsThanhVien;
 	private int soNha;
 
 	public HoDan() {
-		stv = new ArrayList<Nguoi>();
+		dsThanhVien = new ArrayList<Nguoi>();
 	};
 
 	public HoDan(ArrayList<Nguoi> stv, int soNha) {
-		this.stv = stv;
+		this.dsThanhVien = stv;
 		this.soNha = soNha;
 	}
 
@@ -21,7 +21,7 @@ public class HoDan extends Nguoi {
 	}
 
 	public void themDS(Nguoi ng) {
-		stv.add(ng);
+		dsThanhVien.add(ng);
 	}
 
 	public void nhapTT(Scanner sc) {
@@ -32,7 +32,7 @@ public class HoDan extends Nguoi {
 		for (int i = 0; i < n; i++) {
 			ng = new Nguoi();
 			ng.nhapTT(sc);
-			stv.add(ng);
+			dsThanhVien.add(ng);
 		}
 		System.out.println("Nhập số nhà: ");
 		soNha = sc.nextInt();
@@ -40,10 +40,20 @@ public class HoDan extends Nguoi {
 	}
 
 	public void inTT() {
-		for (Nguoi nguoi : stv) {
+		for (Nguoi nguoi : dsThanhVien) {
 			System.out.println("\nThông tin hộ gia đình: ");
 			nguoi.inTT();
 		}
 		System.out.println("\nSố nhà: " + soNha);
+	}
+
+	public boolean coNguoiMungTho80() {
+		for (Nguoi ng : dsThanhVien) {
+			if (ng.getAge() >= 80) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 }

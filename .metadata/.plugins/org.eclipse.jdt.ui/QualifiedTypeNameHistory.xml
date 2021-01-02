@@ -5,7 +5,6 @@
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="baithuchanh3.Nguoi"/>
-<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="baithuchanh3.HocSinh"/>
 <fullyQualifiedTypeName name="DeKiemTraThu.Student"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
@@ -42,5 +41,8 @@
 <fullyQualifiedTypeName name="De2.CanBo"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="deso5.Nguoi"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="deso8.Nguoi"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="deso5.KhuPho"/>
 </qualifiedTypeNameHistroy>
