@@ -23,7 +23,9 @@ public class QLCB {
 			int luaChon = sc.nextInt();
 			sc.nextLine();
 
+			//
 			String hoTen, ngaySinh, gioiTinh, diaChi;
+
 			switch (luaChon) {
 			case 1:
 				System.out.println("Nhap ho ten: ");

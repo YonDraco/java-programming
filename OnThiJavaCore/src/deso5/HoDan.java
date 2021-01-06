@@ -3,7 +3,7 @@ package deso5;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class HoDan extends Nguoi {
+public class HoDan {
 	private ArrayList<Nguoi> dsThanhVien;
 	private int soNha;
 

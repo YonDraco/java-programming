@@ -34,14 +34,6 @@ public class KhuPho {
 		}
 	}
 
-	public void timKiem(String ngaySinh) {
-		for (HoDan hoDan : dsHoDan) {
-			if (ngaySinh.equals(hoDan.getNgaySinh())) {
-				hoDan.inTT();
-			}
-		}
-	}
-
 	public static void main(String[] args) {
 		KhuPho kp = new KhuPho();
 		Scanner sc = new Scanner(System.in);
