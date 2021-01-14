@@ -12,11 +12,6 @@ public class HinhTron {
 		this.r = r;
 	}
 
-	public HinhTron(int r, Diem d) {
-		this.r = r;
-		this.d = d;
-	}
-
 	public float chuVi() {
 		return (float) Math.PI * 2 * r;
 	}

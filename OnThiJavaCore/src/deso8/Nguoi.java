@@ -12,9 +12,9 @@ public class Nguoi {
 	public Nguoi() {
 	}
 
-	public Nguoi(String hoTen, Date ngaySinh, String queQuan) {
+	public Nguoi(String hoTen, String ngaySinh, String queQuan) {
 		this.hoTen = hoTen;
-		this.ngaySinh = ngaySinh;
+		this.ngaySinh = StringToDate(ngaySinh);
 		this.queQuan = queQuan;
 	}
 

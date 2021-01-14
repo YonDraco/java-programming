@@ -1,6 +1,5 @@
 package deso8;
 
-import java.util.Date;
 import java.util.Scanner;
 
 public class CBGV extends Nguoi {
@@ -12,7 +11,7 @@ public class CBGV extends Nguoi {
 	public CBGV() {
 	}
 
-	public CBGV(String hoTen, Date ngaySinh, String queQuan, int luongCung, int thuong, int phat, int luongThucLinh) {
+	public CBGV(String hoTen, String ngaySinh, String queQuan, int luongCung, int thuong, int phat, int luongThucLinh) {
 		super(hoTen, ngaySinh, queQuan);
 		this.luongCung = luongCung;
 		this.thuong = thuong;
